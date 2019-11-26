@@ -54,7 +54,7 @@
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
-/* USER CODE BEGIN PFP */
+/* USER CODE BEGIN PFP */5
 
 /* USER CODE END PFP */
 
@@ -62,7 +62,7 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN 0 */
 uint32_t adcData[100];
 uint32_t timeRate=0;
-uint32_t ex=2200;
+uint32_t ex=1900;
 uint32_t delay=0;
 /* USER CODE END 0 */
 
