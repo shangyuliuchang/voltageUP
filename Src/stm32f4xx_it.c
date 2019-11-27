@@ -23,6 +23,7 @@
 #include "stm32f4xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "main.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -210,9 +211,10 @@ void SysTick_Handler(void)
 void TIM3_IRQHandler(void)
 {
   /* USER CODE BEGIN TIM3_IRQn 0 */
-	count=(count+1)%10;
+	count=(count+1)%50;
 	if(count==0){
 		turn=1-turn;
+		timeRate=(int)(pidCalculate(adcData[0],ex));
 	}
 	if(timeRate<=count){
 		ALOW;

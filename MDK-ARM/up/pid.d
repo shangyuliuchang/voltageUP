@@ -33,6 +33,7 @@ up\pid.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 up\pid.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 up\pid.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 up\pid.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
+up\pid.o: ../Inc/pid.h
 up\pid.o: ../Inc/adc.h
 up\pid.o: ../Inc/dma.h
 up\pid.o: ../Inc/tim.h

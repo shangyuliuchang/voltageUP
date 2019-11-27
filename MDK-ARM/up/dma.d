@@ -33,3 +33,9 @@ up\dma.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 up\dma.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
 up\dma.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 up\dma.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
+up\dma.o: ../Inc/pid.h
+up\dma.o: ../Inc/main.h
+up\dma.o: ../Inc/adc.h
+up\dma.o: ../Inc/dma.h
+up\dma.o: ../Inc/tim.h
+up\dma.o: ../Inc/gpio.h

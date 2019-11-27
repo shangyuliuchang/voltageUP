@@ -24,7 +24,6 @@
 #include "dma.h"
 #include "tim.h"
 #include "gpio.h"
-#include "pid.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -54,7 +53,7 @@
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
-/* USER CODE BEGIN PFP */5
+/* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
 
@@ -101,16 +100,14 @@ int main(void)
 	HAL_TIM_Base_Start_IT(&htim3);
 	timeRate=1;
 	HAL_ADC_Start_DMA(&hadc1,adcData,1);
-	pidInit(0.1f,0.1f,0.0f,100.0f,10.0f);
+	pidInit(0.1f,0.1f,0.0f,100.0f,50.0f);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-			timeRate=(int)(pidCalculate(adcData[0],ex));
-			delay=10;
-			while(delay--);
+		
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
