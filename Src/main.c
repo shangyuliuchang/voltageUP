@@ -100,7 +100,7 @@ int main(void)
 	HAL_TIM_Base_Start_IT(&htim3);
 	timeRate=1;
 	HAL_ADC_Start_DMA(&hadc1,adcData,1);
-	pidInit(0.1f,0.1f,0.0f,100.0f,50.0f);
+	pidInit(0.1f,0.1f,0.0f,1.0f,50.0f);
   /* USER CODE END 2 */
 
   /* Infinite loop */

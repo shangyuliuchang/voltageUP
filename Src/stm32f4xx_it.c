@@ -60,6 +60,7 @@
 uint32_t count=0;
 uint8_t state=0;
 uint8_t turn=0;
+uint8_t initstate=1;
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
@@ -215,6 +216,12 @@ void TIM3_IRQHandler(void)
 	if(count==0){
 		turn=1-turn;
 		timeRate=(int)(pidCalculate(adcData[0],ex));
+		if(initstate==1){
+			timeRate=1;
+		}
+		if(initstate==1 && adcData[0]>1500){
+			initstate=0;
+		}
 	}
 	if(timeRate<=count){
 		ALOW;
