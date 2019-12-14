@@ -9,5 +9,6 @@
 
 void pidInit(float p,float i,float d,float lI,float lT);
 float pidCalculate(float trueValue, float expectedValue);
-
+void pidInit2(float p,float i,float d,float lI,float lT);
+float pidCalculate2(float trueValue, float expectedValue);
 #endif

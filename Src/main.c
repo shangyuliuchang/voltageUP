@@ -60,6 +60,8 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 uint32_t adcData[100];
+uint32_t capadc[1];
+uint32_t capex=1230;
 uint32_t timeRate=0;
 uint32_t ex=1900;
 uint32_t delay=0;
@@ -99,8 +101,10 @@ int main(void)
   /* USER CODE BEGIN 2 */
 	HAL_TIM_Base_Start_IT(&htim3);
 	timeRate=1;
-	HAL_ADC_Start_DMA(&hadc1,adcData,1);
-	pidInit(0.1f,0.1f,0.0f,1.0f,50.0f);
+	HAL_ADC_Start_DMA(&hadc1,adcData,2);
+	pidInit(0.1f,0.1f,0.0f,1.0f,45.0f);
+	pidInit2(0.1f,0.0f,0.0f,0.0f,15.0f);
+	HAL_GPIO_WritePin(GPIOC,GPIO_PIN_4,GPIO_PIN_RESET);
   /* USER CODE END 2 */
 
   /* Infinite loop */

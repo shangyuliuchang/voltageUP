@@ -28,12 +28,12 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "main.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
-
+extern int charge_rate;
 /* USER CODE END ET */
 
 /* Exported constants --------------------------------------------------------*/

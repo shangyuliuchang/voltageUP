@@ -23,7 +23,7 @@
 #include "stm32f4xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "main.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -57,10 +57,13 @@
 #define AHIGH HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,GPIO_PIN_SET)
 #define BLOW HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,GPIO_PIN_RESET)
 #define BHIGH HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,GPIO_PIN_SET)
+#define CLOW HAL_GPIO_WritePin(GPIOA,GPIO_PIN_7,GPIO_PIN_RESET)
+#define CHIGH HAL_GPIO_WritePin(GPIOA,GPIO_PIN_7,GPIO_PIN_SET)
 uint32_t count=0;
 uint8_t state=0;
 uint8_t turn=0;
 uint8_t initstate=1;
+int charge_rate=1;
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
@@ -216,6 +219,7 @@ void TIM3_IRQHandler(void)
 	if(count==0){
 		turn=1-turn;
 		timeRate=(int)(pidCalculate(adcData[0],ex));
+		charge_rate=(int)(pidCalculate2(adcData[1],capex));
 		if(initstate==1){
 			timeRate=1;
 		}
@@ -234,6 +238,11 @@ void TIM3_IRQHandler(void)
 			ALOW;
 			BHIGH;
 		}
+	}
+	if(charge_rate<=count){
+		CLOW;
+	}else{
+		CHIGH;
 	}
   /* USER CODE END TIM3_IRQn 0 */
   HAL_TIM_IRQHandler(&htim3);

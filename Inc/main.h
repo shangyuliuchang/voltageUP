@@ -62,6 +62,8 @@ void Error_Handler(void);
 extern uint32_t timeRate;
 extern uint32_t adcData[100];
 extern uint32_t ex;
+extern uint32_t capadc[1];
+extern uint32_t capex;
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
